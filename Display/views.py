@@ -9,6 +9,7 @@ class IndexView(View):
     def get(self, request):
         apiwrapper = NSApi("527188@student.glu.nl", "pd6lcTRQk3UXIy5KgRUi1qR6gCBCeBZuocc4vuNajaKi6I9G2D6gmQ")
         gutt = apiwrapper.get_departures("ut")
+        # Yeet
 
         for train in gutt:
             gutt[train]["departure_time"] = gutt[train]["departure_time"].strftime("%H:%M")
