@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Vertrektijden</title>
+</head>
+<body>
+
+{% for train_id, train_info in gutt.items %}
+<div class="train">
+
+
+<div class="traininformation">
+
+<p>{{ train_id }} / {{ train_info.departure_time }}</p>
+<p>naar {{ train_info.destination }}</p>
+<p>{{ train_info.via_text }}</p>
+<p>{{ train_info.comments|default_if_none:"" }}</p>
+<p>{{ train_info.tip|default_if_none:"" }}</p>
+
+<p>{{ train_info.departs_from.platform }}</p>
+
+<div class="delay">{{ train_info.delay.time|default_if_none:"" }}{{ train_info.delay.reason|default_if_none:"" }}</div>
+
+</div>
+
+
+</div>
+{% endfor %}
+
+</body>
+</html>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+.train {
+    width: 40vw;
+    margin-left: 5vw;
+    float: left;
+    box-shadow: 0px 0px 52px -15px rgba(0,0,0,0.25);
+    height: 30vh;
+    margin-bottom: 2.5vh;
+    margin-top: 2.5vh;
+    position: relative;
+}
+p {
+    color: black;
+    font-family: "Frutiger 65";
+    padding-left: 5%;
+}
+
+.delay {
+    width: 40vw;
+    height: 5vh;
+    padding: 1%;
+    padding-left: 5%;
+    margin: 0;
+    box-sizing: border-box;
+    float: left;
+    background-color: red;
+    color: #fff;
+    font-size: 1.5vw;
+    font-family: "Frutiger 65";
+    position: absolute;
+    bottom: 0;
+}
+
+    div.delay:empty {
+    display: none !important;
+}
+
+</style>
+
+<script>
+setInterval(
+  function(){$('.delay').fadeIn(800).delay(800).fadeOut(400)}, 3000);
+</script>
