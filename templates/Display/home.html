@@ -14,14 +14,17 @@
 
 <div class="train">
 
+<div class="upper">
 <p class="departuretime"> {{ train_info.departure_time }} </p>
 <p class="traintype">{{ train_info.train_type }}</p>
 <p class="traindestination">{{ train_info.destination }}</p>
 <p class="platform">{{ train_info.departs_from.platform }}</p>
+</div>
+<div class="lower">
 <p class="via">{{ train_info.via_text }}</p>
 <p class="comments">{{ train_info.comments|default_if_none:"" }}{{ train_info.tip|default_if_none:"" }}</p>
 <p class="delay">{{ train_info.delay.reason|default_if_none:"" }}</p>
-
+</div>
 </div>
     <br> <br>
 {% endfor %}
