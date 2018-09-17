@@ -5,7 +5,7 @@ chardet==3.0.4
 Django==2.1.1
 idna==2.7
 lxml==4.2.4
-git+https://github.com/eyedevelop/nsapi-python@9f9c7c0de
+git+https://github.com/eyedevelop/nsapi-python@master
 pytz==2018.5
 requests==2.19.1
 urllib3==1.23
