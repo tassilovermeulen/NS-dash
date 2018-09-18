@@ -2,12 +2,20 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
   <link rel="stylesheet" href="https://tssl.eu/gluidv3/css/basis.css">
     <title>Departures</title>
-  <div class="content_container_top">
+  </div class="content_container_top">
     <div class="content_designelement news"></div></br>
     <h1 class="news_article_h1">Vertrektijden Utrecht Centraal</h1>
   </div>
 <div class="content_container">
 
+{% for disruption_id, disruption_info in badd.items %}
+<p class="id"> {{ disruption_info.id }} </p>
+<p class="trajectory"> {{ disruption_info.trajectory }} </p>
+<p class="period"> {{ disruption_info.period }} </p>
+<p class="reason"> {{ disruption_info.reason }} </p>
+<p class="advice"> {{ disruption_info.advice }} </p>
+<p class="message"> {{ disruption_info.message }} </p>
+{%  endfor %}
 {% for train_id, train_info in gutt.items %}
 
 <div class="train">
