@@ -3,19 +3,23 @@
   <link rel="stylesheet" href="https://tssl.eu/gluidv3/css/basis.css">
     <title>Departures</title>
   <div class="content_container_top">
-    <div class="content_designelement news"></div><br>
-    <h1 class="news_article_h1">Vertrektijden Utrecht Centraal</h1>
+    <div class="content_designelement train"></div><br>
+    <h1 class="news_article_h1">NS Vertrektijden & storingen</h1>
   </div>
 <div class="content_container">
 
 
 {% for unexpected_disruption_id, unexpected_disruption_info in badd.unexpected.items %}
 <div class="disruption">
+<div class="upper_disruption">
 <p class="trajectory"> {{ unexpected_disruption_info.trajectory }} </p>
+</div>
+<div class="lower_disruption">
 <p class="period"> {{ unexpected_disruption_info.period|default_if_none:"" }} </p>
 <p class="reason"> {{ unexpected_disruption_info.reason }} </p>
 <p class="message"> {{ unexpected_disruption_info.message }} </p>
 <p class="advice"> {{ unexpected_disruption_info.advice|default_if_none:"" }} </p>
+</div>
 </div>
 {% endfor %}
 
