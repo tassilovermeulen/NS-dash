@@ -54,6 +54,18 @@ setInterval(
   function(){$('.comments').fadeIn(800).delay(800).fadeOut(400)}, 3000);
 </script>
 
+<script>
+    $(document).ready(function () {
+    setInterval(function () {
+        var iScroll = $(window).scrollTop();
+        iScroll = iScroll + 250;
+        $('html, body').animate({
+            scrollTop: iScroll
+        }, 1000);
+    }, 2000);
+});
+</script>
+
 <style>
 
     * {
