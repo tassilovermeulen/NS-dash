@@ -9,8 +9,10 @@
 <div class="content_container">
 
 
-{% for unexpected_disruption_id, unexpected_disruption_info in badd.unexpected.items %}
 <div class="disruption_container">
+{% for unexpected_disruption_id, unexpected_disruption_info in badd.unexpected.items %}
+
+
     <div class="disruption">
 <div class="upper_disruption">
 <p class="trajectory"> {{ unexpected_disruption_info.trajectory }} </p>
@@ -22,9 +24,10 @@
 <p class="advice"> {{ unexpected_disruption_info.advice|default_if_none:"" }} </p>
 </div>
 </div>
-    </div>
+
 {% endfor %}
 
+    </div>
 {% for train_id, train_info in gutt.items %}
 <div class="train">
 <div class="upper">
