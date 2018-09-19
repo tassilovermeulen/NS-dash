@@ -10,7 +10,8 @@
 
 
 {% for unexpected_disruption_id, unexpected_disruption_info in badd.unexpected.items %}
-<div class="disruption">
+<div class="disruption_container">
+    <div class="disruption">
 <div class="upper_disruption">
 <p class="trajectory"> {{ unexpected_disruption_info.trajectory }} </p>
 </div>
@@ -21,6 +22,7 @@
 <p class="advice"> {{ unexpected_disruption_info.advice|default_if_none:"" }} </p>
 </div>
 </div>
+    </div>
 {% endfor %}
 
 {% for train_id, train_info in gutt.items %}
