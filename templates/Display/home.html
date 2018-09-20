@@ -13,7 +13,7 @@
 {% for unexpected_disruption_id, unexpected_disruption_info in badd.unexpected.items %}
 
 
-    <div class="disruption">
+    <div class="disruption" style="box-sizing: border-box;">
 <div class="upper_disruption">
 <p class="trajectory"> {{ unexpected_disruption_info.trajectory }} </p>
 </div>
@@ -70,6 +70,18 @@ setInterval(
         }, 1000);
     }, 4000);
 });
+</script>
+
+<script>
+    var colors = ['.5vw red solid','2.5vw red solid'];
+var step = 0;
+window.setInterval(function(){
+    $(".disruption").css('border-left',colors[step]);
+    if(step==colors.length-1)
+        step=0;
+    else
+        step+=1;
+},500);
 </script>
 
 <style>
