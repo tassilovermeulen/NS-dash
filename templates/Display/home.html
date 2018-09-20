@@ -61,14 +61,8 @@ setInterval(
 </script>
 
 <script>
-    $(document).ready(function () {
-    setInterval(function () {
-        var iScroll = $(window).scrollTop();
-        iScroll = iScroll + 200;
-        $('html, body').animate({
-            scrollTop: iScroll
-        }, 1000);
-    }, 4000);
+$(window).on('load', function() {
+  $("html, body").animate({ scrollTop: $(document).height() }, 60000);
 });
 </script>
 
