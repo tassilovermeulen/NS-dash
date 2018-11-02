@@ -3,7 +3,9 @@
   <link rel="stylesheet" href="https://tssl.eu/gluidv3/css/basis.css">
     <title>Departures</title>
   <div class="content_container_top">
-    <div class="content_designelement d_train"></div><br>
+      <div class="progress-bar">
+    <span class="progress-bar-fill d_train" style="width: calc(100% - 5vw)"></span>
+</div>
     <h1 class="news_article_h1">NS Vertrektijden & storingen</h1>
   </div>
 <div class="content_container">
@@ -56,6 +58,22 @@ setInterval(
 </script>
 
 <script>
+    var $elements = $('.disruption');
+
+function anim_loop(index) {
+    $elements.eq(index).delay(100).fadeIn(500, function() {
+        var $self = $(this);
+        setTimeout(function() {
+            $self.fadeOut(100);
+            anim_loop((index + 1) % $elements.length);
+        }, 5200);
+    });
+}
+
+anim_loop(0);
+</script>
+
+<script>
 setInterval(
   function(){$('.comments').fadeIn(800).delay(800).fadeOut(400)}, 3000);
 </script>
@@ -75,8 +93,16 @@ window.setInterval(function(){
         step=0;
     else
         step+=1;
-},500);
+},1000);
 </script>
+
+<script>
+
+$('.progress-bar-fill').delay(1000).queue(function () {
+      $(this).css('width', '0%')
+  });
+</script>
+
 
 <style>
 

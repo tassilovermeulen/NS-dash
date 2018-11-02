@@ -30,3 +30,5 @@ class IndexView(View):
             "gutt": gutt,
             "badd": badd
         })
+
+
