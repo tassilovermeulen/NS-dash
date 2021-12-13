@@ -4,7 +4,7 @@ certifi==2018.8.24
 chardet==3.0.4
 Django==2.1.11
 idna==2.7
-lxml==4.6.2
+lxml==4.6.5
 git+https://github.com/eyedevelop/nsapi-python@master
 pytz==2018.5
 requests==2.20.0
